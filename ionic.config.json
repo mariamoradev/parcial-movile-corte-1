@@ -1,0 +1,7 @@
+{
+  "name": "parcial_corte1_movile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

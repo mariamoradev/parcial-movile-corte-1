@@ -1,0 +1,4 @@
+<ion-item>
+  <ion-label>{{ item.title }} - {{ item.price | currency }}</ion-label>
+  <ion-button (click)="removeFromCart(item.id)" slot="end">Eliminar</ion-button>
+</ion-item>

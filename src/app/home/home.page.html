@@ -1,48 +1,34 @@
-
-
-
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      STORE
-    </ion-title>
+    <ion-title> STORE </ion-title>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/smallcar']">
         <ion-icon name="cart"></ion-icon>
       </ion-button>
-    </ion-buttons> 
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
-  
-
   <div class="ion-content">
-    
-      <ion-list>
-        <ion-item>
-          <ion-select (ionChange)="onOptionSelected($event)" aria-label="Categories" placeholder="Categories">
-            <ion-select-option value="electronics">Electronics</ion-select-option>
-            <ion-select-option value="jewelery">Jewelery</ion-select-option>
-            <ion-select-option value="men's clothing">MenSClothing</ion-select-option>
-            <ion-select-option value="women's clothing">WomenSClothing</ion-select-option>
-            <app-card doClick="doNavigate($event)" ></app-card>
-            
-            
-          </ion-select>
-        </ion-item>
-      </ion-list>
-    
-    <div class="element">
+    <ion-list>
+        <ion-select
+          (ionChange)="onOptionSelected($event)"
+          aria-label="Categories"
+          placeholder="Categories">
+          <ion-select-option value="electronics">Electronics</ion-select-option>
+          <ion-select-option value="jewelery">Jewelery</ion-select-option>
+          <ion-select-option value="men's clothing">MenSClothing</ion-select-option>
+          <ion-select-option value="women's clothing">WomenSClothing</ion-select-option>
+        </ion-select>
+    </ion-list>
 
-      <app-card *ngFor="let array of array" [save]="array">
+    <ion-item> 
+      <div class="element">
+      <app-card (doClick)="doNavegate($event)" *ngFor="let item of array" [save]="item">
         
       </app-card>
-
-
-    </div>
+    </div></ion-item>
+   
   </div>
-
-
 </ion-content>

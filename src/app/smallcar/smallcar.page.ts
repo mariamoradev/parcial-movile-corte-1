@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartButtonService } from '../cart-button.service';
 
 @Component({
   selector: 'app-smallcar',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmallcarPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private readonly safeServi: CartButtonService) { }
+public det:any;
   ngOnInit() {
+    this.det= this.safeServi.showProducOfCart();
+    console.log(this.det);
   }
 
 }

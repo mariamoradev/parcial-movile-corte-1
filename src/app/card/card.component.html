@@ -1,19 +1,16 @@
-<ion-card >
-  
-  <ion-card-header >
-    <ion-card-title >{{det.title}}</ion-card-title>
-    <img src="{{det.image}}" class="picture"/>
+<ion-header>
+</ion-header>
+<div class="card-container">
 
-
+  <ion-card class="small-card" (click)="click(save.id)">
+    <ion-card-header class="header">
+      <ion-card-title class="title">{{save.title}}</ion-card-title>
+    </ion-card-header>
+    <img src="{{save.image}}" alt="" class="card-image">
     
-    <div>
-      <p>{{ save.price }}</p>
-      
-        <ion-button (click)="click(save.id)">Ver detalle</ion-button>
-    </div>
-
-  </ion-card-header>
-
- 
-</ion-card>
-
+  
+    <ion-card-content>
+      <span class="price">{{save.price | currency}}</span>
+    </ion-card-content>
+  </ion-card>
+</div>

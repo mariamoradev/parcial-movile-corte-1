@@ -14,15 +14,25 @@ export class DetailsPage implements OnInit {
 
   public det!: IProductsResponse;
 
-  constructor(private readonly HttpSrv: HttpService, private readonly params:ActivatedRoute, private readonly HttpCart: CartButtonService ) { }
+  constructor(private readonly HttpSrv: HttpService, 
+    private readonly params:ActivatedRoute, 
+    private readonly HttpCart: CartButtonService, 
+    private readonly safeServi: CartButtonService) { }
+
 
   async ngOnInit() {
-    this.params.params.subscribe(async (params) => {
-      const address = environment.URL_base + 'products/' + params['id'];
-      console.log(params);
-      this.det = await this.HttpSrv.get<IProductsResponse>(address);
-      console.log(this.det);
+    
+    this.params.params.subscribe(async (p) => {
+      const address = environment.URL_base + 'products/' + p['id'];
+     
+        this. det = await this.HttpSrv.get<IProductsResponse>(address);
+        console.log(this. det); 
+     
     });
+  }
+
+  click(){
+    this.safeServi.addNewProductInCart(this.det);
   }
 
 }

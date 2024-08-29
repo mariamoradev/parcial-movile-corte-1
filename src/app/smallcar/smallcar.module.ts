@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SmallcarPageRoutingModule } from './smallcar-routing.module';
 
 import { SmallcarPage } from './smallcar.page';
+import { ItemComponent } from '../item/item.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { SmallcarPage } from './smallcar.page';
     IonicModule,
     SmallcarPageRoutingModule
   ],
-  declarations: [SmallcarPage]
+  declarations: [SmallcarPage, ItemComponent]
 })
 export class SmallcarPageModule {}

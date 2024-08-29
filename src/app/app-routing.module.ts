@@ -30,7 +30,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
-  providers: [HttpService, CartButtonService]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

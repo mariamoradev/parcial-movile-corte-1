@@ -15,5 +15,6 @@
       <ion-title size="large">smallcar</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
+  <app-item *ngFor="let product of det"  [thing]="product"></app-item>
 </ion-content>
